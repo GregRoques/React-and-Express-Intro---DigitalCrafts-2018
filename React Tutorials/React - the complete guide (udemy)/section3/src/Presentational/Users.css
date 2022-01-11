@@ -1,0 +1,16 @@
+.paragraphs{
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 25px;
+}
+
+.userName{
+    font-weight: bold;
+    color: red;
+    font-style: italic
+}
+
+.inputAlign{
+    text-align: center;
+    padding-top:25px;
+}

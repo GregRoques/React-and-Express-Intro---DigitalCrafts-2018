@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  
+</head>
+<body>
+
+    <form action ="/yourWeather" method="post">
+      <!-- on an input box, "name" attribute is what the variable will be called on submission -->
+      <input class="yourLocation" type="text" name="weatherLocation">
+      <button type="submit" class="latLon" class="btn btn-primary">Submit My Location</button>
+  </form>
+
+  
+  <script>
+    let lat;
+    let lon;
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            const currLocation = `lat=${lat}&lon=${lon}`
+            console.log(currLocation)
+            // console.log(currLocation)
+            document.querySelector('.yourLocation').value = `${currLocation}`
+
+        })
+      }
+        
+  </script>
+
+</body>
+</html>
